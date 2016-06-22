@@ -27,7 +27,7 @@ local function check_member_super(cb_extra, success, result)
 		  public = '🔓',
 		  lock_rtl = '🔓',
 		  expiretime = 'null',
-		  --lock_contacts = 'no',
+		  lock_contacts = '🔓',
 		  strict = '🔓'
         }
       }
@@ -1275,11 +1275,11 @@ function show_supergroup_settingsmod(msg, target)
       	else
         	NUM_MSG_MAX = 5
       	end
-      local bots_protection = "Yes"
+    end
+    local bots_protection = "Yes"
     if data[tostring(target)]['settings']['lock_bots'] then
     	bots_protection = data[tostring(target)]['settings']['lock_bots']
-   	end 
-end
+   	end
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_rtl'] then
 			data[tostring(target)]['settings']['lock_rtl'] = '🔓'
@@ -1428,9 +1428,11 @@ end
     
     Expiretime = math.floor((tonumber(rrredis) - tonumber(now)) / 86400) + 1
     end
+  local gp_type = data[tostring(msg.to.id)]['group_type']
+  local version = data[tostring(msg.to.id)]['version']
 	
   local settings = data[tostring(target)]['settings']
-      local text = ":["..msg.to.print_name:gsub("_"," ").."] تنظیمات سوپر گروه\n\n> عمومی: "..settings.public.."\n> قفل تبلیغ: "..settings.lock_link.."\n> قفل اعضا : "..settings.lock_member.."\n> قفل اسپم: "..settings.lock_spam.."\n> قفل فلود: "..settings.flood.."\n> حساسیت ضد فلود: "..NUM_MSG_MAX.."\n>پیام خوش آمد گویی : "..Welcome.."\n>تنظیمات سخت گیرانه : "..settings.strict.."\n> تاریخ انقضای گروه: "..Expiretime.." روز دیگر"
+      local text = "\nپیام خوش آمد گویی : "..Welcome.."\n تاریخ انقضای گروه: "..Expiretime.." روز دیگر"
   --local text = ":["..msg.to.print_name:gsub("_"," ").."] تنظیمات سوپر گروه\n\n> قفل کاربران گروه: "..settings.lock_member.."\n> قفل تبلیغ: "..settings.lock_link.."\n> قفل اسپم: "..settings.lock_spam.."\n> قفل فلود: "..settings.flood.."\n> حساسیت ضد فلود: "..NUM_MSG_MAX.."\n> Strict settings: "..settings.strict
   return text
   end
