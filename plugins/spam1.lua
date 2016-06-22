@@ -807,12 +807,12 @@ local function lock_group_emoji(msg, data, target)
     return
   end
   local group_emoji_lock = data[tostring(target)]['settings']['emoji']
-  if group_emoji_lock == 'yes' then
-    return 'Emoji (😂😃😄...) is already locked✔'
+  if group_emoji_lock == '🔐' then
+    return 'ارسال اموجی از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['emoji'] = 'yes'
+    data[tostring(target)]['settings']['emoji'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Emoji (😂😃😄...) has been locked✔'
+    return 'ارسال اموجی در سوپر گروه قفل شد'
   end
 end
 
@@ -821,12 +821,12 @@ local function unlock_group_emoji(msg, data, target)
     return
   end
   local group_emoji_lock = data[tostring(target)]['settings']['emoji']
-  if group_emoji_lock == 'no' then
-    return 'Emoji (😂😃😄...) is not locked❌'
+  if group_emoji_lock == '🔓' then
+    return 'ارسال اموجی از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['emoji'] = 'no'
+    data[tostring(target)]['settings']['emoji'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Emoji (😂😃😄...) has been unlocked❌'
+    return 'ارسال اموجی در سوپر گروه مجاز شد'
   end
 end
 
@@ -835,12 +835,12 @@ local function lock_group_tag(msg, data, target)
     return
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
-  if group_tag_lock == 'yes' then
-    return 'Tag (#$) is already locked✔'
+  if group_tag_lock == '🔐' then
+    return 'ارسال تگ از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['tag'] = 'yes'
+    data[tostring(target)]['settings']['tag'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Tag (#$) has been locked✔'
+    return 'ارسال تگ در سوپر گروه قفل شد'
   end
 end
 
@@ -849,12 +849,12 @@ local function unlock_group_tag(msg, data, target)
     return
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
-  if group_tag_lock == 'no' then
-    return 'Tag (#$) is not locked❌'
+  if group_tag_lock == '🔓' then
+    return 'ارسال تگ از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['tag'] = 'no'
+    data[tostring(target)]['settings']['tag'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Tag (#$) has been unlocked❌'
+    return 'ارسال تگ در سوپر گروه مجاز شد'
   end
 end
 
@@ -866,12 +866,12 @@ local function lock_group_spam(msg, data, target)
     return "Owners only!"
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
-  if group_spam_lock == 'yes' then
-    return 'Send spam in SuperGroup is already locked✔'
+  if group_spam_lock == '🔐' then
+    return 'اسپم در سوپر گروه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_spam'] = 'yes'
+    data[tostring(target)]['settings']['lock_spam'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Send spam  in SuperGroup has been locked✔'
+    return 'اسپم در سوپر گروه قفل شد'
   end
 end
 
@@ -880,12 +880,12 @@ local function unlock_group_spam(msg, data, target)
     return
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
-  if group_spam_lock == 'no' then
-    return 'Send spam in SuperGroup is not locked❌'
+  if group_spam_lock == '🔓' then
+    return 'اسپم در سوپر گروه از قبل مجاز شد'
   else
-    data[tostring(target)]['settings']['lock_spam'] = 'no'
+    data[tostring(target)]['settings']['lock_spam'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Send spam in SuperGroup has been unlocked❌'
+    return 'اسپم در سوپر گروه مجاز شد'
   end
 end
 
@@ -894,12 +894,12 @@ local function lock_group_flood(msg, data, target)
     return
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
-  if group_flood_lock == 'yes' then
-    return 'Flooding is already locked✔'
+  if group_flood_lock == '🔐' then
+    return 'فلودینگ در سوپر گروه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['flood'] = 'yes'
+    data[tostring(target)]['settings']['flood'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Flooding has been locked✔'
+    return 'فلودینگ در سوپر گروه قفل شد'
   end
 end
 
@@ -908,12 +908,12 @@ local function unlock_group_flood(msg, data, target)
     return
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
-  if group_flood_lock == 'no' then
-    return 'Flooding is not locked❌'
+  if group_flood_lock == '🔓' then
+    return 'فلودینگ در سوپر گروه از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['flood'] = 'no'
+    data[tostring(target)]['settings']['flood'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Flooding has been unlocked❌'
+    return 'فلودینگ در سوپر گروه مجاز شد'
   end
 end
 
@@ -922,12 +922,12 @@ local function lock_group_arabic(msg, data, target)
     return
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
-  if group_arabic_lock == 'yes' then
-    return 'Arabic/Persian is already locked✅'
+  if group_arabic_lock == '🔐' then
+    return 'عربی/فارسی در سوپر گروه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_arabic'] = 'yes'
+    data[tostring(target)]['settings']['lock_arabic'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Arabic/Persian has been locked✅'
+    return 'عربی/فارسی در سوپر گروه قفل شد'
   end
 end
 
@@ -936,12 +936,12 @@ local function unlock_group_arabic(msg, data, target)
     return
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
-  if group_arabic_lock == 'no' then
-    return 'Arabic/Persian is already unlocked❎'
+  if group_arabic_lock == '🔓' then
+    return 'عربی/فارسی در سوپر گروه از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_arabic'] = 'no'
+    data[tostring(target)]['settings']['lock_arabic'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Arabic/Persian has been unlocked❎'
+    return 'عربی/فارسی در سوپر گروه مجاز شد'
   end
 end
 
@@ -951,13 +951,13 @@ local function lock_group_membermod(msg, data, target)
     return
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
-  if group_member_lock == 'yes' then
-    return 'Add members are already locked✔'
+  if group_member_lock == '🔐' then
+    return 'کاربران گروه از قبل قفل بودند'
   else
-    data[tostring(target)]['settings']['lock_member'] = 'yes'
+    data[tostring(target)]['settings']['lock_member'] = '🔐'
     save_data(_config.moderation.data, data)
   end
-  return 'Add members has been locked✔'
+  return 'کاربران گروه در سوپر گروه قفل شدند'
 end
 
 local function unlock_group_membermod(msg, data, target)
@@ -965,12 +965,12 @@ local function unlock_group_membermod(msg, data, target)
     return
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
-  if group_member_lock == 'no' then
-    return 'Add members are not locked❌'
+  if group_member_lock == '🔓' then
+    return 'کاربران گروه از قبل مجاز بودند'
   else
-    data[tostring(target)]['settings']['lock_member'] = 'no'
+    data[tostring(target)]['settings']['lock_member'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Add members has been unlocked❌'
+    return 'کاربران گروه در سوپر گروه مجاز شدند'
   end
 end
 
@@ -979,12 +979,12 @@ local function lock_group_rtl(msg, data, target)
     return
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
-  if group_rtl_lock == 'yes' then
-    return 'RTl (⬅➡) is already locked✔'
+  if group_rtl_lock == '🔐' then
+    return 'ار تی ال در سوپر گروه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_rtl'] = 'yes'
+    data[tostring(target)]['settings']['lock_rtl'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'RTl (⬅➡) has been locked✔'
+    return 'ار تی ال در سوپر گروه قفل شد '
   end
 end
 
@@ -993,12 +993,12 @@ local function unlock_group_rtl(msg, data, target)
     return
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
-  if group_rtl_lock == 'no' then
-    return 'RTl (⬅➡) is already unlocked❌'
+  if group_rtl_lock == '🔓' then
+    return 'ار تی ال در سوپر گروه از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_rtl'] = 'no'
+    data[tostring(target)]['settings']['lock_rtl'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'RTl (⬅➡) has been unlocked❌'
+    return 'ار تی ال در سوپر گروه مجاز شد'
   end
 end
 
@@ -1007,12 +1007,12 @@ local function lock_group_tgservice(msg, data, target)
     return
   end
   local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
-  if group_tgservice_lock == 'yes' then
-    return 'Tgservice (نمایش ورود/خروج) is already locked🆗'
+  if group_tgservice_lock == '🔐' then
+    return 'نمایش ورود و خروج از سوپر گروه  از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
+    data[tostring(target)]['settings']['lock_tgservice'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Tgservice (نمایش ورود/خروج) has been locked🆗'
+    return 'نمایش ورود و خروج از سوپر گروه قفل شد'
   end
 end
 
@@ -1021,12 +1021,12 @@ local function unlock_group_tgservice(msg, data, target)
     return
   end
   local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
-  if group_tgservice_lock == 'no' then
-    return 'Tgservice (نمایش ورود/خروج) Is Not Locked⛔'
+  if group_tgservice_lock == '🔓' then
+    return 'نمایش ورود و خروج از سوپر گروه از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_tgservice'] = 'no'
+    data[tostring(target)]['settings']['lock_tgservice'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Tgservice (نمایش ورود/خروج) has been unlocked⛔'
+    return 'نمایش ورود و خروج از سوپر گروه مجاز شد'
   end
 end
 
@@ -1035,12 +1035,12 @@ local function lock_group_sticker(msg, data, target)
     return
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
-  if group_sticker_lock == 'yes' then
-    return 'Sends Sticker is already locked✔'
+  if group_sticker_lock == '🔐' then
+    return 'ارسال استیکر در سوپر گروه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_sticker'] = 'yes'
+    data[tostring(target)]['settings']['lock_sticker'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Sends Sticker has been locked✔'
+    return 'ارسال استیکر در سوپر گروه قفل شد'
   end
 end
 
@@ -1049,12 +1049,12 @@ local function unlock_group_sticker(msg, data, target)
     return
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
-  if group_sticker_lock == 'no' then
-    return 'Sends Sticker is already unlocked❌'
+  if group_sticker_lock == '🔓' then
+    return 'ارسال استیکر در سوپر گروه از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_sticker'] = 'no'
+    data[tostring(target)]['settings']['lock_sticker'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Sends Sticker has been unlocked❌'
+    return 'ارسال استیکر در سوپر گروه مجاز شد'
   end
 end
 
@@ -1063,12 +1063,12 @@ local function lock_group_bots(msg, data, target)
     return 
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
-  if group_bots_lock == 'yes' then
-    return 'Add Bots (api) is already enabled🔒'
+  if group_bots_lock == '🔐' then
+    return 'دعوت کردن ربات از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_bots'] = 'yes'
+    data[tostring(target)]['settings']['lock_bots'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Add Bots (api) has been enabled🔒'
+    return 'دعوت کردن ربات در سوپر گروه قفل شد'
   end
 end
 
@@ -1077,12 +1077,12 @@ local function unlock_group_bots(msg, data, target)
     return 
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
-  if group_bots_lock == 'no' then
-    return 'Add Bots (api) is already disabled🔓'
+  if group_bots_lock == '🔓' then
+    return 'دعوت کردن ربات از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_bots'] = 'no'
+    data[tostring(target)]['settings']['lock_bots'] = '🔓'
     save_data(_config.moderation.data, data)
-    return ' Add Bots (api) has been disabled🔓'
+    return 'دعوت کردن ربات در سوپر گروه مجاز شد'
   end
 end
 
@@ -1091,12 +1091,12 @@ local function lock_group_contacts(msg, data, target)
     return
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_contacts']
-  if group_contacts_lock == 'yes' then
-    return 'Share Phone number is already locked✔'
+  if group_contacts_lock == '🔐' then
+    return 'اشتراک گذاری شماره از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['lock_contacts'] = 'yes'
+    data[tostring(target)]['settings']['lock_contacts'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Shsre Phone number has been locked✔'
+    return 'اشتراک گذاری شماره در سوپر گروه قفل شد'
   end
 end
 
@@ -1105,12 +1105,12 @@ local function unlock_group_contacts(msg, data, target)
     return
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
-  if group_contacts_lock == 'no' then
-    return 'Share Phone number is already unlocked❌'
+  if group_contacts_lock == '🔓' then
+    return 'اشتراک گذاری شماره از قبل مجاز بود'
   else
-    data[tostring(target)]['settings']['lock_contacts'] = 'no'
+    data[tostring(target)]['settings']['lock_contacts'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Shsre Phone number has been unlocked❌'
+    return 'اشتراک گذاری شماره در سوپر گروه مجاز شد'
   end
 end
 
@@ -1119,12 +1119,12 @@ local function enable_strict_rules(msg, data, target)
     return
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == 'yes' then
-    return 'Settings are already strictly enforcedℹ'
+  if group_strict_lock == '🔐' then
+    return 'تنظیمات سخت گیرانه از قبل قفل بود'
   else
-    data[tostring(target)]['settings']['strict'] = 'yes'
+    data[tostring(target)]['settings']['strict'] = '🔐'
     save_data(_config.moderation.data, data)
-    return 'Settings will be strictly enforcedℹ'
+    return 'تنظیمات سخت گیرانه فعال شد'
   end
 end
 
@@ -1133,12 +1133,12 @@ local function disable_strict_rules(msg, data, target)
     return
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == 'no' then
-    return 'Settings are not strictly enforced❌'
+  if group_strict_lock == '🔓' then
+    return 'تنظیمات سخت گیرانه از قبل مجاز شد'
   else
-    data[tostring(target)]['settings']['strict'] = 'no'
+    data[tostring(target)]['settings']['strict'] = '🔓'
     save_data(_config.moderation.data, data)
-    return 'Settings will not be strictly enforced❌'
+    return 'تنظیمات سخت گیرانه مجاز شد'
   end
 end
 
@@ -1170,33 +1170,6 @@ local function unlock_group_welcome(msg, data, target)
   end
 end
 
-local function enable_strict_rules(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == '🔐' then
-    return 'Settings are already strictly enforced' --sosha
-  else
-    data[tostring(target)]['settings']['strict'] = '🔐'
-    save_data(_config.moderation.data, data)
-    return 'Settings will be strictly enforced' --sosha
-  end
-end
-
-local function disable_strict_rules(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == '🔓' then
-    return 'Settings are not strictly enforced' --sosha
-  else
-    data[tostring(target)]['settings']['strict'] = '🔓'
-    save_data(_config.moderation.data, data)
-    return 'Settings will not be strictly enforced' --sosha
-  end
-end
 --End supergroup locks
 
 --'Set supergroup rules' function
@@ -1308,11 +1281,11 @@ function show_supergroup_settingsmod(msg, target)
 			data[tostring(target)]['settings']['public'] = '🔓'
 		end
 	end
-	--[[if data[tostring(target)]['settings'] then
+	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_rtl'] then
-			data[tostring(target)]['settings']['lock_rtl'] = 'no'
+			data[tostring(target)]['settings']['lock_rtl'] = '🔓'
 		end
-	end]]
+	end
 
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_member'] then
