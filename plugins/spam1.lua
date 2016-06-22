@@ -183,6 +183,965 @@ end
 end
 
 --Begin supergroup locks
+d
+
+--Begin supergroup locks
+local function lock_group_links(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_link_lock = data[tostring(target)]['settings']['lock_link']
+  if group_link_lock == 'yes' then
+    return 'Send Links is already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_link'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Send Links has been locked✔'
+  end
+end
+
+local function unlock_group_links(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_link_lock = data[tostring(target)]['settings']['lock_link']
+  if group_link_lock == 'no' then
+    return 'Send Links is not locked❌'
+  else
+    data[tostring(target)]['settings']['lock_link'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Send Links has been unlocked❌'
+  end
+end
+
+local function lock_group_all(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_all_lock = data[tostring(target)]['settings']['all']
+  if group_all_lock == 'yes' then
+    return 'All locked is already Actived✔'
+  else
+    data[tostring(target)]['settings']['all'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'All locked has been Active✔'
+  end
+end
+
+local function unlock_group_all(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_all_lock = data[tostring(target)]['settings']['all']
+  if group_all_lock == 'no' then
+    return 'All locked is not Actived❌'
+  else
+    data[tostring(target)]['settings']['all'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'All locked has been Inactiv❌'
+  end
+end
+
+local function lock_group_normal(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_normal_lock = data[tostring(target)]['settings']['normal']
+  if group_normal_lock == 'yes' then
+    return 'Switch Normal is already locked🔒'
+  else
+    data[tostring(target)]['settings']['normal'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Switch Normal has been locked🔒'
+  end
+end
+
+local function unlock_group_normal(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_normal_lock = data[tostring(target)]['settings']['normal']
+  if group_normal_lock == 'no' then
+    return 'Switch Normal is not locked🔓'
+  else
+    data[tostring(target)]['settings']['normal'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Switch Normal has been unlocked🔓'
+  end
+end
+
+local function lock_group_family(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_family_lock = data[tostring(target)]['settings']['family']
+  if group_family_lock == 'yes' then
+    return 'Switch Family is already locked🔒'
+  else
+    data[tostring(target)]['settings']['family'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Switch Family has been locked🔒'
+  end
+end
+
+local function unlock_group_family(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_family_lock = data[tostring(target)]['settings']['family']
+  if group_family_lock == 'no' then
+    return 'Switch Family is not locked🔓'
+  else
+    data[tostring(target)]['settings']['family'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Switch Family has been unlocked🔓'
+  end
+end
+      
+local function lock_group_etehad(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_etehad_lock = data[tostring(target)]['settings']['etehad']
+  if group_etehad_lock == 'yes' then
+    return 'Switch Etehad is already locked🔒'
+  else
+    data[tostring(target)]['settings']['etehad'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Switch Etehad has been locked🔒'
+  end
+end
+
+local function unlock_group_etehad(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_etehad_lock = data[tostring(target)]['settings']['etehad']
+  if group_etehad_lock == 'no' then
+    return 'Switch Etehad is not locked🔓'
+  else
+    data[tostring(target)]['settings']['etehad'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Switch Etehad has been unlocked🔓'
+  end
+end
+
+local function lock_group_leave(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_leave_lock = data[tostring(target)]['settings']['leave']
+  if group_leave_lock == 'yes' then
+    return 'leave is already locked✔'
+  else
+    data[tostring(target)]['settings']['leave'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'leave has been locked✔'
+  end
+end
+
+local function unlock_group_leave(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_leave_lock = data[tostring(target)]['settings']['leave']
+  if group_leave_lock == 'no' then
+    return 'leave is not locked❌'
+  else
+    data[tostring(target)]['settings']['leave'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'leave has been unlocked❌'
+  end
+end
+
+local function lock_group_operator(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_operator_lock = data[tostring(target)]['settings']['operator']
+  if group_operator_lock == 'yes' then
+    return 'operator is already locked✔'
+  else
+    data[tostring(target)]['settings']['operator'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'operator has been locked✔'
+  end
+end
+
+local function unlock_group_operator(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_operator_lock = data[tostring(target)]['settings']['operator']
+  if group_operator_lock == 'no' then
+    return 'operator is not locked❌'
+  else
+    data[tostring(target)]['settings']['operator'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'operator has been unlocked❌'
+  end
+end
+
+local function lock_group_reply(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_reply_lock = data[tostring(target)]['settings']['reply']
+  if group_reply_lock == 'yes' then
+    return 'Reply Message is already locked✔'
+  else
+    data[tostring(target)]['settings']['reply'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Reply Message has been locked✔'
+  end
+end
+
+local function unlock_group_reply(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_reply_lock = data[tostring(target)]['settings']['reply']
+  if group_reply_lock == 'no' then
+    return 'Reply Message is not locked❌'
+  else
+    data[tostring(target)]['settings']['reply'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Reply Message has been unlocked❌'
+  end
+end
+
+local function lock_group_username(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_username_lock = data[tostring(target)]['settings']['username']
+  if group_username_lock == 'yes' then
+    return 'Username (@) is already locked✔'
+  else
+    data[tostring(target)]['settings']['username'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Username (@) has been locked✔'
+  end
+end
+
+local function unlock_group_username(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_username_lock = data[tostring(target)]['settings']['username']
+  if group_username_lock == 'no' then
+    return 'Username (@) is not locked❌'
+  else
+    data[tostring(target)]['settings']['username'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Username (@) has been unlocked❌'
+  end
+end
+
+local function lock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_media_lock = data[tostring(target)]['settings']['media']
+  if group_media_lock == 'yes' then
+    return 'Media is already locked✔'
+  else
+    data[tostring(target)]['settings']['media'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Media has been locked✔'
+  end
+end
+
+local function unlock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_media_lock = data[tostring(target)]['settings']['media']
+  if group_media_lock == 'no' then
+    return 'Media is not locked❌'
+  else
+    data[tostring(target)]['settings']['media'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Media has been unlocked❌'
+  end
+end
+
+local function lock_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_lock = data[tostring(target)]['settings']['fosh']
+  if group_fosh_lock == 'yes' then
+    return 'Badwords is already locked✔'
+  else
+    data[tostring(target)]['settings']['fosh'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Badwords has been locked✔'
+  end
+end
+
+local function unlock_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_lock = data[tostring(target)]['settings']['fosh']
+  if group_fosh_lock == 'no' then
+    return 'Badwords is not locked❌'
+  else
+    data[tostring(target)]['settings']['fosh'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Badwords has been unlocked❌'
+  end
+end
+
+local function lock_group_photo(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_photo_lock = data[tostring(target)]['settings']['photo']
+  if group_photo_lock == 'yes' then
+    return 'Photos is already locked✔'
+  else
+    data[tostring(target)]['settings']['photo'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Photos has been locked✔'
+  end
+end
+
+local function unlock_group_photo(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_photo_lock = data[tostring(target)]['settings']['photo']
+  if group_photo_lock == 'no' then
+    return 'Photos is not locked❌'
+  else
+    data[tostring(target)]['settings']['photo'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Photos has been unlocked❌'
+  end
+end
+
+local function lock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['video']
+  if group_video_lock == 'yes' then
+    return 'Video is already locked✔'
+  else
+    data[tostring(target)]['settings']['video'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Video has been locked✔'
+  end
+end
+
+local function unlock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['video']
+  if group_video_lock == 'no' then
+    return 'Video is not locked❌'
+  else
+    data[tostring(target)]['settings']['video'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Video has been unlocked❌'
+  end
+end
+
+local function lock_group_audio(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_audio_lock = data[tostring(target)]['settings']['audio']
+  if group_audio_lock == 'yes' then
+    return 'Audio is already locked✔'
+  else
+    data[tostring(target)]['settings']['audio'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Audio has been locked✔'
+  end
+end
+
+local function unlock_group_audio(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_audio_lock = data[tostring(target)]['settings']['audio']
+  if group_audio_lock == 'no' then
+    return 'Audio is not locked❌'
+  else
+    data[tostring(target)]['settings']['audio'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Audio has been unlocked❌'
+  end
+end
+
+local function lock_group_gif(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_gif_lock = data[tostring(target)]['settings']['gif']
+  if group_gif_lock == 'yes' then
+    return 'Gifs is already locked✔'
+  else
+    data[tostring(target)]['settings']['gif'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Gifs has been locked✔'
+  end
+end
+
+local function unlock_group_gif(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_gif_lock = data[tostring(target)]['settings']['gif']
+  if group_gif_lock == 'no' then
+    return 'Gifs is not locked❌'
+  else
+    data[tostring(target)]['settings']['gif'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Gifs has been unlocked❌'
+  end
+end
+
+local function lock_group_website(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_website_lock = data[tostring(target)]['settings']['website']
+  if group_website_lock == 'yes' then
+    return 'Website (http:/https:/...) is already locked✔'
+  else
+    data[tostring(target)]['settings']['website'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Website (http:/https:/...) has been locked✔'
+  end
+end
+
+local function unlock_group_website(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_website_lock = data[tostring(target)]['settings']['website']
+  if group_website_lock == 'no' then
+    return 'Website (http:/https:/...) is not locked❌'
+  else
+    data[tostring(target)]['settings']['website'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Website (http:/https:/...) has been unlocked❌'
+  end
+end
+
+local function lock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['chat']
+  if group_chat_lock == 'yes' then
+    return 'Chats Message is already Enabled🔇'
+  else
+    data[tostring(target)]['settings']['chat'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Chats Message has been Enabled🔇'
+  end
+end
+
+local function unlock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['chat']
+  if group_chat_lock == 'no' then
+    return 'Chats Message is not Enabled🔊'
+  else
+    data[tostring(target)]['settings']['chat'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Chats Message  has been Disabled🔊'
+  end
+end
+
+local function lock_group_chatall(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chatall_lock = data[tostring(target)]['settings']['chatall']
+  if group_chatall_lock == 'yes' then
+    return 'Chatall =(emoji,sticker,chats,media)\nis already Enabled🔇'
+  else
+    data[tostring(target)]['settings']['chatall'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Chatall =(emoji,sticker,chats,media)\nhas been Enabled🔇'
+  end
+end
+
+local function unlock_group_chatall(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chatall_lock = data[tostring(target)]['settings']['chatall']
+  if group_chatall_lock == 'no' then
+    return 'Chatall =(emoji,sticker,chats,media)\nis not Enabled🔊'
+  else
+    data[tostring(target)]['settings']['chatall'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Chatall =(emoji,sticker,chats,media)\nhas been Disabled🔊'
+  end
+end
+
+local function lock_group_poker(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_poker_lock = data[tostring(target)]['settings']['poket']
+  if group_poker_lock == 'yes' then
+    return 'Poker (😐) is already locked✔'
+  else
+    data[tostring(target)]['settings']['poker'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Poker (😐) has been locked✔'
+  end
+end
+
+local function unlock_group_poker(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_poker_lock = data[tostring(target)]['settings']['poker']
+  if group_poker_lock == 'no' then
+    return 'Poker (😐) is not locked❌'
+  else
+    data[tostring(target)]['settings']['poker'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Poker (😐) has been unlocked❌'
+  end
+end
+ 
+local function lock_group_join(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_join_lock = data[tostring(target)]['settings']['join']
+  if group_join_lock == 'yes' then
+    return 'Join in SuperGroup is already locked✔'
+  else
+    data[tostring(target)]['settings']['join'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Join in SuperGroup has been locked✔'
+  end
+end
+
+local function unlock_group_join(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_join_lock = data[tostring(target)]['settings']['join']
+  if group_join_lock == 'no' then
+    return 'Join in SuperGroup is not locked❌'
+  else
+    data[tostring(target)]['settings']['join'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Join in SuperGroup has been unlocked❌'
+  end
+end
+
+local function lock_group_fwd(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fwd_lock = data[tostring(target)]['settings']['fwd']
+  if group_fwd_lock == 'yes' then
+    return 'Forward Text and Message is already locked✔'
+  else
+    data[tostring(target)]['settings']['fwd'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Forward Text and Message has been locked✔'
+  end
+end
+
+local function unlock_group_fwd(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fwd_lock = data[tostring(target)]['settings']['fwd']
+  if group_fwd_lock == 'no' then
+    return 'Forward Text and Message is not locked❌'
+  else
+    data[tostring(target)]['settings']['fwd'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Forward Text and Message has been unlocked❌'
+  end
+end
+
+local function lock_group_english(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_english_lock = data[tostring(target)]['settings']['english']
+  if group_english_lock == 'yes' then
+    return 'English and is already locked✔'
+  else
+    data[tostring(target)]['settings']['english'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'English and  has been locked✔'
+  end
+end
+
+local function unlock_group_english(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_english_lock = data[tostring(target)]['settings']['english']
+  if group_english_lock == 'no' then
+    return 'English is not locked❌'
+  else
+    data[tostring(target)]['settings']['english'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'English has been unlocked❌'
+  end
+end
+
+local function lock_group_emoji(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_emoji_lock = data[tostring(target)]['settings']['emoji']
+  if group_emoji_lock == 'yes' then
+    return 'Emoji (😂😃😄...) is already locked✔'
+  else
+    data[tostring(target)]['settings']['emoji'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Emoji (😂😃😄...) has been locked✔'
+  end
+end
+
+local function unlock_group_emoji(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_emoji_lock = data[tostring(target)]['settings']['emoji']
+  if group_emoji_lock == 'no' then
+    return 'Emoji (😂😃😄...) is not locked❌'
+  else
+    data[tostring(target)]['settings']['emoji'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Emoji (😂😃😄...) has been unlocked❌'
+  end
+end
+
+local function lock_group_tag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tag_lock = data[tostring(target)]['settings']['tag']
+  if group_tag_lock == 'yes' then
+    return 'Tag (#$) is already locked✔'
+  else
+    data[tostring(target)]['settings']['tag'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Tag (#$) has been locked✔'
+  end
+end
+
+local function unlock_group_tag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tag_lock = data[tostring(target)]['settings']['tag']
+  if group_tag_lock == 'no' then
+    return 'Tag (#$) is not locked❌'
+  else
+    data[tostring(target)]['settings']['tag'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Tag (#$) has been unlocked❌'
+  end
+end
+
+local function lock_group_spam(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  if not is_owner(msg) then
+    return "Owners only!"
+  end
+  local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
+  if group_spam_lock == 'yes' then
+    return 'Send spam in SuperGroup is already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_spam'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Send spam  in SuperGroup has been locked✔'
+  end
+end
+
+local function unlock_group_spam(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
+  if group_spam_lock == 'no' then
+    return 'Send spam in SuperGroup is not locked❌'
+  else
+    data[tostring(target)]['settings']['lock_spam'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Send spam in SuperGroup has been unlocked❌'
+  end
+end
+
+local function lock_group_flood(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_flood_lock = data[tostring(target)]['settings']['flood']
+  if group_flood_lock == 'yes' then
+    return 'Flooding is already locked✔'
+  else
+    data[tostring(target)]['settings']['flood'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Flooding has been locked✔'
+  end
+end
+
+local function unlock_group_flood(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_flood_lock = data[tostring(target)]['settings']['flood']
+  if group_flood_lock == 'no' then
+    return 'Flooding is not locked❌'
+  else
+    data[tostring(target)]['settings']['flood'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Flooding has been unlocked❌'
+  end
+end
+
+local function lock_group_arabic(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
+  if group_arabic_lock == 'yes' then
+    return 'Arabic/Persian is already locked✅'
+  else
+    data[tostring(target)]['settings']['lock_arabic'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Arabic/Persian has been locked✅'
+  end
+end
+
+local function unlock_group_arabic(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
+  if group_arabic_lock == 'no' then
+    return 'Arabic/Persian is already unlocked❎'
+  else
+    data[tostring(target)]['settings']['lock_arabic'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Arabic/Persian has been unlocked❎'
+  end
+end
+
+
+local function lock_group_membermod(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_member_lock = data[tostring(target)]['settings']['lock_member']
+  if group_member_lock == 'yes' then
+    return 'Add members are already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_member'] = 'yes'
+    save_data(_config.moderation.data, data)
+  end
+  return 'Add members has been locked✔'
+end
+
+local function unlock_group_membermod(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_member_lock = data[tostring(target)]['settings']['lock_member']
+  if group_member_lock == 'no' then
+    return 'Add members are not locked❌'
+  else
+    data[tostring(target)]['settings']['lock_member'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Add members has been unlocked❌'
+  end
+end
+
+local function lock_group_rtl(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
+  if group_rtl_lock == 'yes' then
+    return 'RTl (⬅➡) is already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_rtl'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'RTl (⬅➡) has been locked✔'
+  end
+end
+
+local function unlock_group_rtl(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
+  if group_rtl_lock == 'no' then
+    return 'RTl (⬅➡) is already unlocked❌'
+  else
+    data[tostring(target)]['settings']['lock_rtl'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'RTl (⬅➡) has been unlocked❌'
+  end
+end
+
+local function lock_group_tgservice(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'yes' then
+    return 'Tgservice (نمایش ورود/خروج) is already locked🆗'
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Tgservice (نمایش ورود/خروج) has been locked🆗'
+  end
+end
+
+local function unlock_group_tgservice(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'no' then
+    return 'Tgservice (نمایش ورود/خروج) Is Not Locked⛔'
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Tgservice (نمایش ورود/خروج) has been unlocked⛔'
+  end
+end
+
+local function lock_group_sticker(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
+  if group_sticker_lock == 'yes' then
+    return 'Sends Sticker is already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_sticker'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Sends Sticker has been locked✔'
+  end
+end
+
+local function unlock_group_sticker(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
+  if group_sticker_lock == 'no' then
+    return 'Sends Sticker is already unlocked❌'
+  else
+    data[tostring(target)]['settings']['lock_sticker'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Sends Sticker has been unlocked❌'
+  end
+end
+
+local function lock_group_bots(msg, data, target)
+  if not is_momod(msg) then
+    return 
+  end
+  local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
+  if group_bots_lock == 'yes' then
+    return 'Add Bots (api) is already enabled🔒'
+  else
+    data[tostring(target)]['settings']['lock_bots'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Add Bots (api) has been enabled🔒'
+  end
+end
+
+local function unlock_group_bots(msg, data, target)
+  if not is_momod(msg) then
+    return 
+  end
+  local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
+  if group_bots_lock == 'no' then
+    return 'Add Bots (api) is already disabled🔓'
+  else
+    data[tostring(target)]['settings']['lock_bots'] = 'no'
+    save_data(_config.moderation.data, data)
+    return ' Add Bots (api) has been disabled🔓'
+  end
+end
+
+local function lock_group_contacts(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_rtl_lock = data[tostring(target)]['settings']['lock_contacts']
+  if group_contacts_lock == 'yes' then
+    return 'Share Phone number is already locked✔'
+  else
+    data[tostring(target)]['settings']['lock_contacts'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Shsre Phone number has been locked✔'
+  end
+end
+
+local function unlock_group_contacts(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
+  if group_contacts_lock == 'no' then
+    return 'Share Phone number is already unlocked❌'
+  else
+    data[tostring(target)]['settings']['lock_contacts'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Shsre Phone number has been unlocked❌'
+  end
+end
+
+local function enable_strict_rules(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_strict_lock = data[tostring(target)]['settings']['strict']
+  if group_strict_lock == 'yes' then
+    return 'Settings are already strictly enforcedℹ'
+  else
+    data[tostring(target)]['settings']['strict'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Settings will be strictly enforcedℹ'
+  end
+end
+
+local function disable_strict_rules(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_strict_lock = data[tostring(target)]['settings']['strict']
+  if group_strict_lock == 'no' then
+    return 'Settings are not strictly enforced❌'
+  else
+    data[tostring(target)]['settings']['strict'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Settings will not be strictly enforced❌'
+  end
+end
+
 local function lock_group_welcome(msg, data, target)
       if not is_momod(msg) then
         return "شما مدیر گروه نیستید"
