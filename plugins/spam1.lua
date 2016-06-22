@@ -1275,7 +1275,11 @@ function show_supergroup_settingsmod(msg, target)
       	else
         	NUM_MSG_MAX = 5
       	end
-    end
+      local bots_protection = "Yes"
+    if data[tostring(target)]['settings']['lock_bots'] then
+    	bots_protection = data[tostring(target)]['settings']['lock_bots']
+   	end 
+end
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_rtl'] then
 			data[tostring(target)]['settings']['lock_rtl'] = '🔓'
