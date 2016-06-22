@@ -1277,16 +1277,136 @@ function show_supergroup_settingsmod(msg, target)
       	end
     end
 	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_rtl'] then
+			data[tostring(target)]['settings']['lock_rtl'] = '🔓'
+		end
+        end
+      if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_tgservice'] then
+			data[tostring(target)]['settings']['lock_tgservice'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['tag'] then
+			data[tostring(target)]['settings']['tag'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['emoji'] then
+			data[tostring(target)]['settings']['emoji'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['gif'] then
+			data[tostring(target)]['settings']['gif'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['chat'] then
+			data[tostring(target)]['settings']['chat'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['chatall'] then
+			data[tostring(target)]['settings']['chatall'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['website'] then
+			data[tostring(target)]['settings']['website'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['english'] then
+			data[tostring(target)]['settings']['english'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['fwd'] then
+			data[tostring(target)]['settings']['fwd'] = '🔓'
+		end
+	end
+          if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['photo'] then
+			data[tostring(target)]['settings']['photo'] = '🔓'
+		end
+	end 
+          if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['video'] then
+			data[tostring(target)]['settings']['video'] = '🔓'
+		end
+	end
+          if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['audio'] then
+			data[tostring(target)]['settings']['audio'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['reply'] then
+			data[tostring(target)]['settings']['reply'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['join'] then
+			data[tostring(target)]['settings']['join'] = '🔓'
+		end
+	end
+ 	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['poker'] then
+			data[tostring(target)]['settings']['poker'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['fosh'] then
+			data[tostring(target)]['settings']['fosh'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['username'] then
+			data[tostring(target)]['settings']['username'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['media'] then
+			data[tostring(target)]['settings']['media'] = '🔓'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['leave'] then
+			data[tostring(target)]['settings']['leave'] = '🔓'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['all'] then
+			data[tostring(target)]['settings']['all'] = '🔓'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['operator'] then
+			data[tostring(target)]['settings']['operator'] = '🔓'
+		end
+	end
+        if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['normal'] then
+			data[tostring(target)]['settings']['normal'] = '🔓'
+		end
+	end
+        if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['family'] then
+			data[tostring(target)]['settings']['family'] = '🔓'
+		end
+	end 
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['etehad'] then
+			data[tostring(target)]['settings']['etehad'] = '🔓'
+		end
+	end
+
+	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['public'] then
 			data[tostring(target)]['settings']['public'] = '🔓'
 		end
 	end
-	if data[tostring(target)]['settings'] then
-		if not data[tostring(target)]['settings']['lock_rtl'] then
-			data[tostring(target)]['settings']['lock_rtl'] = '🔓'
-		end
-	end
-
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_member'] then
 			data[tostring(target)]['settings']['lock_member'] = '🔓'
